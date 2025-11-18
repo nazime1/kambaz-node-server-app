@@ -11,14 +11,13 @@ import AssignmentsRoutes from "./Kambaz/Assignments/routes.js";
 import EnrollmentRoutes from "./Kambaz/Enrollments/routes.js";
 import "dotenv/config";
 const app = express();
-app.use(cors());
+app.use(cors({
+   credentials: true,
+   origin: process.env.CLIENT_URL || "http://localhost:3000"
+        || "https://cs-5610-kambaz-git-main-nazime1s-projects.vercel.app",
+ }));
 const sess = {
   secret: process.env.SESSION_SECRET || "kambaz" || "https://cs-5610-kambaz-git-main-nazime1s-projects.vercel.app",
-  cookie: { },
-  resave: false,
-  saveUninitialized: false
-}
-
 if (app.get('env') === 'production') {
   app.set('trust proxy', 1) // trust first proxy
   sess.cookie.secure = true // serve secure cookies
