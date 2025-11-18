@@ -11,11 +11,7 @@ import AssignmentsRoutes from "./Kambaz/Assignments/routes.js";
 import EnrollmentRoutes from "./Kambaz/Enrollments/routes.js";
 import "dotenv/config";
 const app = express();
-app.use(
- cors({
-   credentials: true,
- })
-);
+app.use(cors());
 const sess = {
   secret: process.env.SESSION_SECRET || "kambaz",
   cookie: { },
