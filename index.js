@@ -13,7 +13,7 @@ import "dotenv/config";
 const app = express();
 app.use(cors());
 const sess = {
-  secret: process.env.SESSION_SECRET || "kambaz",
+  secret: process.env.SESSION_SECRET || "kambaz" || "https://cs-5610-kambaz-git-main-nazime1s-projects.vercel.app",
   cookie: { },
   resave: false,
   saveUninitialized: false
