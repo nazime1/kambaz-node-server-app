@@ -14,10 +14,12 @@ const app = express();
 app.use(cors({
    credentials: true,
    origin: process.env.CLIENT_URL || "http://localhost:3000"
-        || "https://cs-5610-kambaz-git-main-nazime1s-projects.vercel.app",
- }));
+}));
 const sess = {
-  secret: process.env.SESSION_SECRET || "kambaz" || "https://cs-5610-kambaz-git-main-nazime1s-projects.vercel.app",
+  secret: process.env.SESSION_SECRET || "kambaz",
+  resave: false,
+  saveUninitialized: false,
+}
 if (app.get('env') === 'production') {
   app.set('trust proxy', 1) // trust first proxy
   sess.cookie.secure = true // serve secure cookies
