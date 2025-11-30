@@ -28,7 +28,7 @@ if (process.env.SERVER_ENV !== "development") {
     domain: process.env.SERVER_URL,
   };
 }
-app.use(session(sess));
+app.use(session(sessionOptions));
 app.use(express.json());
 Lab5(app);
 Hello(app);
