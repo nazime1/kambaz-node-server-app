@@ -1,4 +1,5 @@
 import express from 'express';
+import mongoose from "mongoose";
 import Hello from "./Hello.js"
 import cors from "cors";
 import Lab5 from "./Lab5/index.js";
@@ -9,6 +10,7 @@ import CourseRoutes from "./Kambaz/Courses/routes.js";
 import ModulesRoutes from "./Kambaz/Modules/routes.js";
 import AssignmentsRoutes from "./Kambaz/Assignments/routes.js";
 import EnrollmentRoutes from "./Kambaz/Enrollments/routes.js";
+import QuizzesRoutes from "./Kambaz/Quizzes/routes.js";
 import "dotenv/config";
 const app = express();
 app.use(cors({
@@ -38,3 +40,4 @@ CourseRoutes(app, db);
 ModulesRoutes(app, db);
 AssignmentsRoutes(app, db);
 EnrollmentRoutes(app, db);
+QuizzesRoutes(app, db);
